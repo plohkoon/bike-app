@@ -5,7 +5,7 @@ import { DataType } from "../App";
 
 const UserInformation: React.FC<Props> = ({ data, update }) => {
   const [advanced, setAdvanced] = useState<boolean>(false)
-  console.log(advanced)
+
   return (
     <>
       <Stack spacing={10}>

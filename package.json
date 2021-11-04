@@ -1,5 +1,6 @@
 {
   "name": "bike-app",
+  "homepage": "https://plohkoon.github.io/bike-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

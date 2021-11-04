@@ -39,6 +39,16 @@ function App() {
     setData(old => ({ ...old, [key]: newValue}));
   }
 
+  const disableForward = () => {
+    if (page === 0) {
+      return data["Height"] === null || data["Weight"] === null || data["Skill Level"] === "";
+    } else if (page === 1) {
+      return data["Frame"] === "" || data["Fork"] === "" || data["Shock"] === ""
+    } else {
+      return true
+    }
+  }
+
   return (
     <>
       <CssBaseline />
@@ -67,7 +77,7 @@ function App() {
       }}>
         <ArrowBack />
       </Fab>
-      <Fab disabled={page > 1} onClick={e => setPage(old => old + 1)} style={{
+      <Fab disabled={disableForward()} onClick={e => setPage(old => old + 1)} style={{
         position: 'fixed',
         bottom: 20,
         right: 20

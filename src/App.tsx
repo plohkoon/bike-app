@@ -14,9 +14,9 @@ export interface DataType {
   "Inseam": null | number;
   "Ape Index": null | number;
   "Weight Bias": string;
-  "Frame": null | string;
-  "Fork": null | string;
-  "Shock": null | string;
+  "Frame": string;
+  "Fork": string;
+  "Shock": string;
 }
 
 function App() {
@@ -27,9 +27,9 @@ function App() {
     "Inseam": null,
     "Ape Index": null,
     "Weight Bias": "",
-    "Frame": null,
-    "Fork": null,
-    "Shock": null
+    "Frame": "",
+    "Fork": "",
+    "Shock": ""
   });
 
   const [page, setPage] = useState<number>(0);
@@ -46,7 +46,7 @@ function App() {
       <SideBar data={data} />
       <Container sx={theme => ({
         height: `calc(100vh - 64px)`,
-        width: `calc(100vw - 250px)`,
+        width: `calc(100vw - 300px)`,
         position: 'fixed',
         bottom: 0,
         right: 0,

@@ -6,7 +6,7 @@ const BikeInformation: React.FC<Props> = () => {
 
 interface Props {
   data: DataType;
-  update: (key: keyof DataType) => (value: DataType[typeof key]) => void;
+  update: (key: keyof DataType) => (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default BikeInformation;

@@ -6,9 +6,9 @@ import { DataType } from "../App";
 const SideBar: React.FC<Props> = ({ data }) => {
   return (
     <Drawer variant="permanent">
-      <div style={{ width: 250 }}>
+      <div style={{ width: 300 }}>
         <Container sx={theme => theme.mixins.toolbar} />
-        <List>
+        <List style={{ paddingTop: 20 }}>
           { Object.entries(data)
                   .map(([key, value]) => {
                     return (

@@ -10,10 +10,10 @@ import UserInformation from './components/user_information';
 export interface DataType {
   "Height": null | number;
   "Weight": null | number;
-  "Skill Level": null | string;
+  "Skill Level": string;
   "Inseam": null | number;
   "Ape Index": null | number;
-  "Weight Bias": null | string;
+  "Weight Bias": string;
   "Frame": null | string;
   "Fork": null | string;
   "Shock": null | string;
@@ -23,10 +23,10 @@ function App() {
   const [data, setData] = useState<DataType>({
     "Height": null,
     "Weight": null,
-    "Skill Level": null,
+    "Skill Level": "",
     "Inseam": null,
     "Ape Index": null,
-    "Weight Bias": null,
+    "Weight Bias": "",
     "Frame": null,
     "Fork": null,
     "Shock": null
@@ -34,7 +34,8 @@ function App() {
 
   const [page, setPage] = useState<number>(0);
 
-  const updateKey = (key: keyof DataType) => (newValue: DataType[typeof key]) => {
+  const updateKey = (key: keyof DataType) => (e: {target: { value: number | string }}) => {
+    const newValue = e.target.value;
     setData(old => ({ ...old, [key]: newValue}));
   }
 
@@ -62,7 +63,7 @@ function App() {
       <Fab disabled={page <= 0} onClick={e => setPage(old => old - 1)} style={{
         position: 'fixed',
         bottom: 20,
-        left: 270
+        left: 320
       }}>
         <ArrowBack />
       </Fab>
